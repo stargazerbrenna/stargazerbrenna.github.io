@@ -1,0 +1,53 @@
+/* External style sheet */
+
+h1 { 
+		font-family: "Lucida Sans Typewriter", Lucida Console, monospace;
+		font-size: 3em;
+		font-weight: 900;
+		color: #4F4166;
+		text-align: center;
+		background-color: #DDC9F2;
+		border: 5px solid #4F4166;
+}
+		
+h2 { 
+		font-family: "Lucida Sans Typewriter", Lucida Console, monospace;
+		font-size: 2em;
+		font-weight: 500;
+		color: #4F4166;
+		text-align: center;
+		background-color: #DDC9F2;
+		border: 5px solid #4F4166;
+}
+
+body { 
+		font-family: "Courier New", Courier, monospace;
+		font-size: 1.5em;
+		font-weight: normal;
+		color: #4F4166;
+		background-color: #EFE9F5;
+}
+p {
+		margin: 50px;
+		font-size: 1.5em;
+}
+img {
+		border: 5px solid #4F4166;
+}
+
+ol {
+		margin: 50px;
+		background-color: #D2E0C1;
+		font-size: 1.52em;
+}
+
+table {
+		margin: 50px;
+		background-color: #D2E0C1;
+}
+a {
+	margin: 50px;
+	font-weight: 500;
+	border: 5px solid #4F4166;
+	padding: .2em;
+}
