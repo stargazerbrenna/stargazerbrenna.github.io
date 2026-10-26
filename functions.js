@@ -9,6 +9,11 @@ let time = 0;
 let timeInterval = null;
 let gameStarted = false;
 
+function updateMoves() 
+{
+    document.getElementById("moves").innerText = moveCount;
+}
+
 function shuffle() 
 {
 	for (var row = 1; row <= 4; row++) {
@@ -18,6 +23,8 @@ function shuffle()
 			swapTiles("cell" + row + column, "cell" + rowTemp + columnTemp);
 		}
 	}
+	moveCount = 0;
+	updateMoves();
 	startTimer();
 }
 
@@ -56,6 +63,8 @@ function simpleGame()
 	document.getElementById("cell43").className = "tile15";
 	document.getElementById("cell44").className = "tile16";
 	swapTiles("cell43", "cell44");
+	moveCount = 0;
+	updateMoves();
 	startTimer();
 }
 
@@ -69,6 +78,7 @@ function clickTile(row, column)
 			if (document.getElementById("cell" + row + (column + 1)).className == "tile16") {
 				swapTiles("cell" + row + column, "cell" + row + (column + 1));
 				moveCount++;
+				updateMoves();
 				setTimeout(() => {win()}, 1000);
 				return;
 			}
@@ -77,6 +87,7 @@ function clickTile(row, column)
 			if (document.getElementById("cell" + row + (column - 1)).className == "tile16") {
 				swapTiles("cell" + row + column, "cell" + row + (column - 1));
 				moveCount++;
+				updateMoves();
 				setTimeout(() => {win()}, 1000);
 				return;
 			}
@@ -85,6 +96,7 @@ function clickTile(row, column)
 			if (document.getElementById("cell" + (row - 1) + column).className == "tile16") {
 				swapTiles("cell" + row + column, "cell" + (row - 1) + column);
 				moveCount++;
+				updateMoves();
 				setTimeout(() => {win()}, 1000);
 				return;
 			}
@@ -93,6 +105,7 @@ function clickTile(row, column)
 			if (document.getElementById("cell" + (row + 1) + column).className == "tile16") {
 				swapTiles("cell" + row + column, "cell" + (row + 1) + column);
 				moveCount++;
+				updateMoves();
 				setTimeout(() => {win()}, 1000);
 				return;
 			}
@@ -125,5 +138,6 @@ function win()
 		window.alert("You win!\n Time spent in seconds: " + time + "\n Number of moves used: " + moveCount + "\nTo play again, click new game or simple game.");
 		window.location.reload(); 
 		moveCount = 0;
+		updateMoves();
 	}
 }
